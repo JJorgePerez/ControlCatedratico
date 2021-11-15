@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="examenfinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="catedratico">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nombre2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellido2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="idcurso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="curso">
+    <Key>
+      <PropertyRef Name="codigocurso" />
+    </Key>
+    <Property Name="codigocurso" Type="int" Nullable="false" />
+    <Property Name="nombrecurso" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="creditos" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_catedratico_curso">
+    <End Role="curso" Type="Self.curso" Multiplicity="1" />
+    <End Role="catedratico" Type="Self.catedratico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="curso">
+        <PropertyRef Name="codigocurso" />
+      </Principal>
+      <Dependent Role="catedratico">
+        <PropertyRef Name="idcurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="examenfinalModelStoreContainer">
+    <EntitySet Name="catedratico" EntityType="Self.catedratico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="curso" EntityType="Self.curso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_catedratico_curso" Association="Self.FK_catedratico_curso">
+      <End Role="curso" EntitySet="curso" />
+      <End Role="catedratico" EntitySet="catedratico" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

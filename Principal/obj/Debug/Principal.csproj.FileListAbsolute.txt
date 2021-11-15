@@ -1,0 +1,11 @@
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\Principal.dll.config
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\Principal.dll
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\Principal.pdb
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\EntityFramework.dll
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\EntityFramework.xml
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\obj\Debug\Principal.csproj.CopyComplete
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\obj\Debug\Principal.dll
+C:\Users\Oswaldo\source\repos\finalFase2\Principal\obj\Debug\Principal.pdb

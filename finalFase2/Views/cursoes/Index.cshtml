@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Principal.curso>
+
+@{
+    ViewBag.Title = "LISTADO DE CURSOS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CURSOS DE NUESTRA UNIVERSIDAD</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Curso", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre del Curso
+        </th>
+        <th>
+            Créditos
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrecurso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creditos)
+        </td>
+        <td>
+            @Html.ActionLink("Modificar", "Edit", new { id=item.codigocurso }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.codigocurso }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.codigocurso })
+        </td>
+    </tr>
+}
+
+</table>

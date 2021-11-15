@@ -1,0 +1,35 @@
+﻿@model Principal.curso
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles del curso</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre de Curso: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombrecurso)
+        </dd>
+
+        <dt>
+            Créditos: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creditos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigocurso }) |
+    @Html.ActionLink("Atras", "Index")
+</p>

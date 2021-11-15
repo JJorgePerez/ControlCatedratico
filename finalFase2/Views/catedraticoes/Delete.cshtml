@@ -1,0 +1,81 @@
+﻿@model Principal.catedratico
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ELIMINAR</h2>
+
+<h3>¿Desea eliminar este catedrático?</h3>
+<div>
+    <h4>Catedrático</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+              Primer Nombre:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre1)
+        </dd>
+
+        <dt>
+            Segundo Nombre:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre2)
+        </dd>
+
+        <dt>
+            Primer Apellido:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido1)
+        </dd>
+
+        <dt>
+            Segundo Apellido:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido2)
+        </dd>
+
+        <dt>
+            Teléfono:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            Estado:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            Curso:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso.nombrecurso)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a Lista", "Index")
+        </div>
+    }
+</div>
